@@ -18,6 +18,7 @@ int check_wall(char  *tab,char *str, int len, int pos)
 	int i;
 	int j;
 	int a;
+	static int k;
 
 	i = 0;
 	j = 0;
@@ -29,11 +30,11 @@ int check_wall(char  *tab,char *str, int len, int pos)
 		while (tab[i] )
 		{
 			if (tab[i] == '1')
-				j++;
+				k++;
 			i++;
 		}
 		i = j;
-		if (j == ft_strlen(tab))
+		if (k == ft_strlen(tab))
 			j = 1;
 		else
 			j = 0;
@@ -47,14 +48,14 @@ int check_wall(char  *tab,char *str, int len, int pos)
 		else
 			j = 0;
 	}
-	if (pos == len - 1)
+	if (pos == len)
 	{
-		if (!ft_memcmp(tab,str,ft_strlen(tab)) && i == ft_strlen(str))
+		if (!ft_memcmp(tab,str,ft_strlen(tab)) && k == ft_strlen(str))
 		{
 			j = 1;
 		}
 		else
-			 j = 0;
+			j = 0;
 	}
 	return j;
  }
@@ -74,12 +75,13 @@ while (tab[j])
  	j++;
 while (i < j - 1)
 {
-		//printf("%d",check_wall(tab[i],tab[j - 1],j,i));
+		printf("%d",check_wall(tab[i],tab[j - 1],j,i));
 		//check_wall(tab[i],tab[j - 1],j,i);
 		i++;
 }
-	//check_wall(tab[0],tab[j - 1],j,i);
-	printf("%d",check_wall(tab[0],tab[j - 1],j,i - 1));
+	//printf(" i : %d j : %d", i,j );
+	//check_wall(tab[0],tab[j - 1],j,i + 1);
+	printf("%d",check_wall(tab[0],tab[j - 1],j,i + 1));
 }
 
 // 	s = malloc(sizeof(char) * j);
