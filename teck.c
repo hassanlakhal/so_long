@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   teck.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 17:54:46 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/11/15 15:38:34 by hlakhal-         ###   ########.fr       */
+/*   Created: 2022/12/30 02:33:29 by hlakhal-          #+#    #+#             */
+/*   Updated: 2022/12/31 00:22:42 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
-# include <fcntl.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
+#include "so_long.h"
 
-char	*get_next_line(int fd);
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *src);
-char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_search(const char *s, int c);
+g_data	cont(char **str)
+{
+	g_data	a;
+	int		j;
+	int		i;
 
-#endif
+	i = 0;
+	a.cont_c = 0;
+	a.cont_p = 0;
+	a.cont_e = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j])
+		{
+			if (str[i][j] == 'C')
+				a.cont_c++;
+			if (str[i][j] == 'P')
+				a.cont_p++;
+			if (str[i][j] == 'E')
+				a.cont_e++;
+			j++;
+		}
+		i++;
+	}
+	return (a);
+}
