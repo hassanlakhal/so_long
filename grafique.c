@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 00:02:47 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/12/31 06:04:24 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/01/02 08:44:45 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,12 +111,15 @@ int	main(void)
 	g_data	g;
 	g_data	k;
 	g_data	tck;
+	g_data	player;
 
 	g = read_map_on_split();
 	tck = cont(g.map);
 	map_tck_c_e_p(tck.cont_c,tck.cont_e,tck.cont_p);
 	map_tck_wall(g.map,g.y,g.x);
 	map_tck_rectangular(g.map,g.x);
+	player = player_pos(g.map);
+	//check_path_c(g,player.y,player.x);
 	g.mlx = mlx_init();
 	g.mlx_win = mlx_new_window(g.mlx, 45 * g.x, 45 * g.y, "so_long");
 	change_map_img(g.map, &g);

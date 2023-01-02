@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 21:55:07 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/12/31 06:04:34 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/01/02 07:44:36 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include "./get_next_line/get_next_line.h"
 # include "./libft/libft.h"
 # include <errno.h>
-# include <string.h>
 # include <mlx.h>
+# include <string.h>
 typedef struct pos_wall
 {
 	int		x;
@@ -49,8 +49,10 @@ int			move_left(g_data *p, int a, int *move);
 g_data		player_pos(char **c);
 void		change_map_img(char **k, g_data *g);
 g_data		cont(char **str);
-void map_tck_c_e_p(int a, int b, int c);
-void map_tck_wall(char **str,int j,int x);
-void map_tck_rectangular(char **str,int len);
+void		map_tck_c_e_p(int a, int b, int c);
+void		map_tck_wall(char **str, int j, int x);
+void		map_tck_rectangular(char **str, int len);
+void		map_tck_new_line(char *str);
+void		check_path_c(g_data g, int i, int j);
 
 #endif
