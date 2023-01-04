@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 21:55:07 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/01/02 07:44:36 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/01/03 22:40:31 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct grafique_data
 	void	*mlx_win;
 	void	*mlx_img;
 	char	**map;
+	const char **tab_check;
 	int		whidt;
 	int		height;
 	int		x;
@@ -53,6 +54,6 @@ void		map_tck_c_e_p(int a, int b, int c);
 void		map_tck_wall(char **str, int j, int x);
 void		map_tck_rectangular(char **str, int len);
 void		map_tck_new_line(char *str);
-void		check_path_c(g_data g, int i, int j);
-
+void		check_path_c(const char **str,int y,int x, int i, int j);
+void		check_path_e(const char **str,int y,int x, int i, int j);
 #endif
