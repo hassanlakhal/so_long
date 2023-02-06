@@ -6,15 +6,15 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 02:33:29 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/12/31 00:22:42 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/06 00:51:26 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-g_data	cont(char **str)
+data	cont(char **str)
 {
-	g_data	a;
+	data	a;
 	int		j;
 	int		i;
 

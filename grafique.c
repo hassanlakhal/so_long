@@ -6,13 +6,27 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 00:02:47 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/01/03 22:40:08 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/06 00:51:26 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	change_map_img(char **k, g_data *g)
+void	ft_image(char c, int i, int j, data *g)
+{
+	if (c == '1')
+		display_wall(i, j, g);
+	if (c == '0')
+		display_gras(i, j, g);
+	if (c == 'P')
+		display_player(i, j, g);
+	if (c == 'E')
+		display_exit(i, j, g);
+	if (c == 'C')
+		display_colection(i, j, g);
+}
+
+void	change_map_img(char **k, data *g)
 {
 	int	j;
 	int	i;
@@ -23,63 +37,18 @@ void	change_map_img(char **k, g_data *g)
 		j = 0;
 		while (k[i][j])
 		{
-			if (k[i][j] == '1')
-			{
-				g->mlx_img = mlx_xpm_file_to_image(g->mlx, "wall1.xpm",
-						&g->whidt, &g->height);
-				mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45,
-						i * 45);
-			}
-			if (k[i][j] == '0')
-			{
-				g->mlx_img = mlx_xpm_file_to_image(g->mlx, "gras.xpm",
-						&g->whidt, &g->height);
-				mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45,
-						i * 45);
-			}
-			if (k[i][j] == 'P')
-			{
-				g->mlx_img = mlx_xpm_file_to_image(g->mlx, "gras.xpm",
-						&g->whidt, &g->height);
-				mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45,
-						i * 45);
-				g->mlx_img = mlx_xpm_file_to_image(g->mlx, "player.xpm",
-						&g->whidt, &g->height);
-				mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45,
-						i * 45);
-			}
-			if (k[i][j] == 'E')
-			{
-				g->mlx_img = mlx_xpm_file_to_image(g->mlx, "gras.xpm",
-						&g->whidt, &g->height);
-				mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45,
-						i * 45);
-				g->mlx_img = mlx_xpm_file_to_image(g->mlx, "exit.xpm",
-						&g->whidt, &g->height);
-				mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45,
-						i * 45);
-			}
-			if (k[i][j] == 'C')
-			{
-				g->mlx_img = mlx_xpm_file_to_image(g->mlx, "gras.xpm",
-						&g->whidt, &g->height);
-				mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45,
-						i * 45);
-				g->mlx_img = mlx_xpm_file_to_image(g->mlx, "colection.xpm",
-						&g->whidt, &g->height);
-				mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45,
-						i * 45);
-			}
+			ft_image(k[i][j], i, j, g);
 			j++;
 		}
 		i++;
 	}
 }
-int	key_hook(int keycode, g_data *vars)
+
+int	key_hook(int keycode, data *vars)
 {
 	static int	c;
 	static int	move;
-	g_data		d;
+	data		d;
 	int			a;
 
 	a = 0;
@@ -101,34 +70,29 @@ int	key_hook(int keycode, g_data *vars)
 		move_left(vars, a, &move);
 	return (c);
 }
-int ft_exit(g_data g)
+int	ft_exit(data g)
 {
 	printf("--- Exit by X ---\n");
 	exit(0);
 }
-int	main(void)
+int	main(int argc, char **argv)
 {
-	g_data	g;
-	g_data	k;
-	g_data	tck;
-	g_data	player;
-	g_data tableu_check;
-	const char **tableau_2d;
+	data_geniral giniral;
 
-	g = read_map_on_split();
-	tableu_check = read_map_on_split();
-	tableau_2d = tableu_check.tab_check;
-	tck = cont(g.map);
-	player = player_pos(g.map);
-	map_tck_c_e_p(tck.cont_c,tck.cont_e,tck.cont_p);
-	map_tck_wall(g.map,g.y,g.x);
-	map_tck_rectangular(g.map,g.x);
-	check_path_c(tableau_2d,g.y,g.x,player.y,player.x);
-	check_path_e(tableau_2d,g.y,g.x,player.y,player.x);
-	g.mlx = mlx_init();
-	g.mlx_win = mlx_new_window(g.mlx, 45 * g.x, 45 * g.y, "so_long");
-	change_map_img(g.map, &g);
-	mlx_hook(g.mlx_win, 2, 0, key_hook, &g);
-	mlx_hook(g.mlx_win, 17, 0, ft_exit, &g);
-	mlx_loop(g.mlx);
+	giniral.g = read_map_on_split(argv[1]);
+	giniral.tableu_check = read_map_on_split(argv[1]);
+	giniral.tableau_2d = giniral.tableu_check.tab_check;
+	giniral.tck = cont(giniral.g.map);
+	giniral.player = player_pos(giniral.g.map);
+	map_tck_c_e_p(giniral.tck.cont_c, giniral.tck.cont_e, giniral.tck.cont_p);
+	map_tck_wall(giniral.g.map, giniral.g.y, giniral.g.x);
+	map_tck_rectangular(giniral.g.map, giniral.g.x);
+	check_path_c(giniral.tableau_2d, giniral);
+	check_path_e(giniral.tableau_2d, giniral);
+	giniral.g.mlx = mlx_init();
+	giniral.g.mlx_win = mlx_new_window(giniral.g.mlx, 45 * giniral.g.x, 45 * giniral.g.y, "so_long");
+	change_map_img(giniral.g.map, &giniral.g);
+	mlx_hook(giniral.g.mlx_win, 2, 0, key_hook, &giniral.g);
+	mlx_hook(giniral.g.mlx_win, 17, 0, ft_exit, &giniral.g);
+	mlx_loop(giniral.g.mlx);
 }

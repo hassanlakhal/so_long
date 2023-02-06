@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:43:31 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/11/01 14:46:57 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/05 03:31:22 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_isalpha(int c);
+void	free_result(char **str);
 
 #endif

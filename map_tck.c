@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 03:55:58 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/01/03 03:32:14 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/05 22:52:34 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	message_error(char *str)
 {
-	printf("This map invalid : %s\n",str);
+	printf("This map invalid : %s\n", str);
 	exit(0);
 }
 void	map_tck_c_e_p(int a, int b, int c)
@@ -71,13 +71,14 @@ void	map_tck_rectangular(char **str, int len)
 }
 void	map_tck_new_line(char *str)
 {
-	int i;
+	int	i;
+
 	i = 0;
-	if(str[0] == '\n')
+	if (!str || str[0] == '\n')
 		message_error("Problem new line");
 	while (str[i])
 	{
-		if(str[i] == '\n' && str[i + 1] == '\n')
+		if (str[i] == '\n' && str[i + 1] == '\n')
 			message_error("Problem new line");
 		i++;
 	}

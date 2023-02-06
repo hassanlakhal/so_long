@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 02:53:32 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/11/01 14:25:56 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/05 03:30:58 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	numbers_word(char const *s, char c)
 	return (j);
 }
 
-static void	free_result(char **str)
+void	free_result(char **str)
 {
 	int	i;
 

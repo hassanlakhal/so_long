@@ -6,21 +6,22 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 01:55:05 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/12/31 01:39:50 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/06 00:51:26 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
+#include "so_long.h"
 
-g_data player_pos(char **c)
+data	player_pos(char **c)
 {
-	g_data k;
-	int i;
-	int j;
+	data	k;
+	int		i;
+	int		j;
+
 	i = 0;
 	while (c[i])
 	{
-		j = 0 ;
+		j = 0;
 		while (c[i][j])
 		{
 			if (c[i][j] == 'P')
@@ -32,7 +33,5 @@ g_data player_pos(char **c)
 		}
 		i++;
 	}
-	return k;
+	return (k);
 }
-
-
