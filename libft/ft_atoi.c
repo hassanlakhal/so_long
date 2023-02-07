@@ -6,13 +6,13 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 14:05:45 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/11/01 18:07:00 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/06 21:29:02 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long	ft_resulte(const char *str, int i, int sing)
+static long	ft_resulte(char const *str, int i, int sing)
 {
 	long	resulte;
 

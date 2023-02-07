@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 03:55:58 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/05 22:52:34 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/06 03:08:54 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ void	message_error(char *str)
 	printf("This map invalid : %s\n", str);
 	exit(0);
 }
+
 void	map_tck_c_e_p(int a, int b, int c)
 {
 	if (a < 1 || b != 1 || c != 1)
 		message_error("Preblem in P or E or C");
 }
+
 void	map_tck_wall(char **str, int y, int x)
 {
 	int	i;
@@ -29,26 +31,14 @@ void	map_tck_wall(char **str, int y, int x)
 
 	j = 0;
 	i = 0;
-	while (str[0][i])
-	{
-		if (str[0][i] != '1')
-			message_error("Preblem in wall");
-		i++;
-	}
 	i = 0;
-	while (str[y - 1][i])
-	{
-		if (str[y - 1][i] != '1')
-			message_error("Preblem in wall");
-		i++;
-	}
-	i = 1;
 	while (str[i] && i < y)
 	{
 		j = 0;
 		while (str[i][j])
 		{
-			if (str[i][0] != '1' || str[i][x - 1] != '1')
+			if (str[0][j] != '1' || str[i][x - 1] != '1' || str[y
+				- 1][j] != '1')
 				message_error("Preblem in wall");
 			else if (!ft_strchr("PCE10", str[i][j]))
 				message_error("Preblem in invalide character");
@@ -57,6 +47,7 @@ void	map_tck_wall(char **str, int y, int x)
 		i++;
 	}
 }
+
 void	map_tck_rectangular(char **str, int len)
 {
 	int	i;
@@ -69,6 +60,7 @@ void	map_tck_rectangular(char **str, int len)
 		i++;
 	}
 }
+
 void	map_tck_new_line(char *str)
 {
 	int	i;

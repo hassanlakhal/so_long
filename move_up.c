@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 02:15:07 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/06 00:51:26 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:45:40 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	ft_exit_e(int a, char c, int *move)
 	}
 }
 
-int	move_up(data *p, int a, int *move)
+int	move_up(t_data *p, int a, int *move)
 {
 	char	temp;
-	data	pos;
+	t_data	pos;
 	int		j;
 	int		i;
 
@@ -47,10 +47,10 @@ int	move_up(data *p, int a, int *move)
 	return (0);
 }
 
-int	move_down(data *p, int a, int *move)
+int	move_down(t_data *p, int a, int *move)
 {
 	char	temp;
-	data	pos;
+	t_data	pos;
 	int		j;
 	int		i;
 
@@ -72,10 +72,10 @@ int	move_down(data *p, int a, int *move)
 	return (0);
 }
 
-int	move_right(data *p, int a, int *move)
+int	move_right(t_data *p, int a, int *move)
 {
 	char	temp;
-	data	pos;
+	t_data	pos;
 	int		j;
 	int		i;
 
@@ -97,10 +97,10 @@ int	move_right(data *p, int a, int *move)
 	return (0);
 }
 
-int	move_left(data *p, int a, int *move)
+int	move_left(t_data *p, int a, int *move)
 {
 	char	temp;
-	data	pos;
+	t_data	pos;
 	int		j;
 	int		i;
 

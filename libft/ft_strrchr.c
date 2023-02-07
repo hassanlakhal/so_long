@@ -6,13 +6,13 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 11:10:09 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/11/01 15:43:16 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/06 21:29:02 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(char const *s, int c)
 {
 	unsigned char	*ret;
 	int				i;

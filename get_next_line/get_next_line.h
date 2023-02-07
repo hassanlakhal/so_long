@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 21:57:34 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/12/21 01:33:14 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/06 21:29:02 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # endif
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *src);
+size_t	ft_strlen(char const *s);
+char	*ft_strdup(char const *src);
 char	*ft_strjoin(char const *s1, char const *s2);
-int		ft_search(const char *s, int c);
+int		ft_search(char const *s, int c);
 
 #endif

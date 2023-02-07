@@ -6,15 +6,15 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 01:55:05 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/06 00:51:26 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:45:40 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-data	player_pos(char **c)
+t_data	player_pos(char **c)
 {
-	data	k;
+	t_data	k;
 	int		i;
 	int		j;
 
