@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 23:16:41 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 02:22:05 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/07 16:51:07 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	check_path_c(char **tab, t_data_geniral giniral)
 	{
 		if (ft_strchr(tab[k], 'C'))
 		{
-			printf("trik ma9to3a");
+			write(2,"Error\ntrik ma9to3a",19);
 			free((void *)tab[k]);
 			exit(0);
 		}

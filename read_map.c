@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 23:17:13 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 01:53:22 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:24:32 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	path_file(int a, char *path)
 		{
 			if (ft_memcmp(path + i, ".ber", ft_strlen(path + i)))
 			{
-				write(1, "file not exit\n", 15);
+				write(1, "Error\n", 7);
+				ft_putendl_fd("file not exit",2);
 				exit(0);
 			}
 		}
@@ -31,7 +32,8 @@ void	path_file(int a, char *path)
 	}
 	if (a <= 0 || !ft_strnstr(path, ".ber", ft_strlen(path)))
 	{
-		write(1, "file not exit\n", 15);
+		write(2, "Error\n", 7);
+		ft_putendl_fd("file not exit",2);
 		exit(0);
 	}
 }
