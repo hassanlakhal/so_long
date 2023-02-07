@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 00:02:47 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 18:20:56 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/07 21:36:47 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,11 @@ char	*read_map_1(char *path_1)
 
 	fd = open(path_1, O_RDWR);
 	while ((a = get_next_line(fd)))
+	{
 		str = ft_strjoin(str, a);
+		free(a);
+	}
+
 	path_file(fd,path_1);
 	free(a);
 	close(fd);

@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 21:55:07 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 18:19:33 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/07 23:38:15 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "./get_next_line/get_next_line.h"
 # include "./libft/libft.h"
+# include "./ft_printf/ft_printf.h"
 # include <errno.h>
 # include <mlx.h>
 # include <string.h>

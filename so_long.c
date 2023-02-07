@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:14:12 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 19:03:31 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/07 23:28:28 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	key_hook(int keycode, t_data *vars)
 	d = cont(vars->map);
 	if (keycode == 53)
 	{
-		printf("--- Exit by ESC ---\n");
+		ft_printf("--- Exit by ESC ---\n");
 		exit(0);
 	}
 	if (!d.cont_c)
@@ -41,7 +41,7 @@ int	key_hook(int keycode, t_data *vars)
 
 int	ft_exit(t_data g)
 {
-	printf("--- Exit by X ---\n");
+	ft_printf("--- Exit by X ---\n");
 	exit(0);
 }
 
@@ -52,9 +52,9 @@ void function_help(t_data_geniral	giniral,char *path)
 	char			**tableau_2d_1;
 
 	tableau = read_map_1(path);
-	giniral.g = read_map_on_split(path);
 	tableau_2d = ft_split(tableau, '\n');
 	free(tableau);
+	giniral.g = read_map_on_split(path);
 	giniral.tck = cont(giniral.g.map);
 	giniral.player = player_pos(giniral.g.map);
 	map_tck_c_e_p(giniral.tck.cont_c, giniral.tck.cont_e, giniral.tck.cont_p);
@@ -63,17 +63,18 @@ void function_help(t_data_geniral	giniral,char *path)
 	check_path_c(tableau_2d, giniral);
 	tableau = read_map_1(path);
 	tableau_2d_1 = ft_split(tableau, '\n');
+	free(tableau);
 	check_path_e(tableau_2d_1, giniral);
 	giniral.g.mlx = mlx_init();
 	giniral.g.mlx_win = mlx_new_window(giniral.g.mlx, 45 * giniral.g.x, 45
 			* giniral.g.y, "so_long");
 	change_map_img(giniral.g.map, &giniral.g);
+	//free_result(giniral.g.map);
 	mlx_hook(giniral.g.mlx_win, 2, 0, key_hook, &giniral.g);
 	mlx_hook(giniral.g.mlx_win, 17, 0, ft_exit, &giniral.g);
 	mlx_loop(giniral.g.mlx);
-	free(giniral.k.tableau_2d);
-}
 
+}
 int	main(int argc, char **argv)
 {
 	t_data_geniral	giniral;
@@ -83,5 +84,7 @@ int	main(int argc, char **argv)
 		write(2,"Error\nEnter (./so_long) and (filename.ber)",43);
 	else
 		write(2,"Error\nplese enter paht of map\n",31);
+
+	system("leaks so_long\n");
 
 }

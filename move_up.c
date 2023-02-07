@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 02:15:07 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 16:51:35 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/07 23:28:28 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_exit_e(int a, char c, int *move)
 {
 	if (a == 1 && c == 'E')
 	{
-		printf("number of move %d\n", ++*move);
-		printf("You winner nice !!");
+		ft_printf("number of move %d\n", ++*move);
+		ft_printf("  😺𝓎𝑜𝓊 𝓌𝒾𝓃😺  ");
 		exit(0);
 	}
 }
@@ -40,7 +40,7 @@ int	move_up(t_data *p, int a, int *move)
 		temp = p->map[i - 1][j];
 		p->map[i - 1][j] = p->map[i][j];
 		p->map[i][j] = temp;
-		printf("number of move %d\n", ++*move);
+		ft_printf("number of move %d\n", ++*move);
 		display_player(i - 1, j, p);
 		display_gras(i, j, p);
 	}
@@ -65,7 +65,7 @@ int	move_down(t_data *p, int a, int *move)
 		temp = p->map[i + 1][j];
 		p->map[i + 1][j] = p->map[i][j];
 		p->map[i][j] = temp;
-		printf("number of move %d\n", ++*move);
+		ft_printf("number of move %d\n", ++*move);
 		display_player(i + 1, j, p);
 		display_gras(i, j, p);
 	}
@@ -90,7 +90,7 @@ int	move_right(t_data *p, int a, int *move)
 		temp = p->map[i][j + 1];
 		p->map[i][j + 1] = p->map[i][j];
 		p->map[i][j] = temp;
-		printf("number of move %d\n", ++*move);
+		ft_printf("number of move %d\n", ++*move);
 		display_player(i, j + 1, p);
 		display_gras(i, j, p);
 	}
@@ -115,7 +115,7 @@ int	move_left(t_data *p, int a, int *move)
 		temp = p->map[i][j - 1];
 		p->map[i][j - 1] = p->map[i][j];
 		p->map[i][j] = temp;
-		printf("number of move %d\n", ++*move);
+		ft_printf("number of move %d\n", ++*move);
 		display_player(i, j - 1, p);
 		display_gras(i, j, p);
 	}
