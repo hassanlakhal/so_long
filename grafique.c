@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 00:02:47 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 02:12:41 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/07 03:57:10 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,6 @@ int	main(int argc, char **argv)
 	map_tck_wall(giniral.g.map, giniral.g.y, giniral.g.x);
 	map_tck_rectangular(giniral.g.map, giniral.g.x);
 	check_path_c(tableau_2d, giniral);
-	free(tableau_2d);
 	tableau = read_map_1(argv[1]);
 	tableau_2d_1 = ft_split(tableau, '\n');
 	check_path_e(tableau_2d_1, giniral);

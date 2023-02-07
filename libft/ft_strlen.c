@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 10:32:16 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/06 21:29:02 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/07 02:57:11 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 size_t	ft_strlen(char const *s)
 {
 	size_t	i;
+
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 		i++;
 	return (i);
 }
