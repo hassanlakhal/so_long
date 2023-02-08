@@ -6,9 +6,11 @@
 #    By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 03:01:17 by hlakhal-          #+#    #+#              #
-#    Updated: 2023/02/08 03:23:48 by hlakhal-         ###   ########.fr        #
+#    Updated: 2023/02/08 03:54:24 by hlakhal-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+COLOUR_GREEN=\033[0;32m
 
 NAME = so_long
 
@@ -25,18 +27,21 @@ OBJ = $(SRCS:.c=.o)
 all:so_long
 
 so_long:$(OBJ)
+
 		@make -sC libft/
 		@make -sC ft_printf/
-		$(CC) $(CFLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit libft/libft.a ft_printf/libftprintf.a -o so_long
+		@$(CC) $(CFLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit libft/libft.a ft_printf/libftprintf.a -o so_long
+		@echo "$(COLOUR_GREEN)done 👊"
 
 clean:
-		make -C libft/ clean
-		make -C ft_printf/ clean
-		rm -f  $(OBJ)
+		@make -sC libft/ clean
+		@make -sC ft_printf/ clean
+		@rm -f  $(OBJ)
 
 fclean:	clean
-		make -C libft/ fclean
-		make -C ft_printf/ fclean
-		rm -f $(NAME)
+		@echo "$(COLOUR_GREEN)clean all"
+		@make -sC libft/ fclean
+		@make -sC ft_printf/ fclean
+		@rm -f $(NAME)
 
 re:		fclean all
