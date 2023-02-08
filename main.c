@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:14:12 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 23:28:28 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/08 03:27:28 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"so_long.h"
+#include "so_long.h"
 
 int	key_hook(int keycode, t_data *vars)
 {
@@ -41,50 +41,43 @@ int	key_hook(int keycode, t_data *vars)
 
 int	ft_exit(t_data g)
 {
+	(void)g;
 	ft_printf("--- Exit by X ---\n");
 	exit(0);
 }
 
-void function_help(t_data_geniral	giniral,char *path)
+void	function_help(char *path)
 {
-	char			*tableau;
-	char			**tableau_2d;
-	char			**tableau_2d_1;
-
-	tableau = read_map_1(path);
-	tableau_2d = ft_split(tableau, '\n');
-	free(tableau);
+	t_data_geniral	giniral;
+	giniral.tableau = read_map_1(path);
+	giniral.tableau_2d = ft_split(giniral.tableau, '\n');
+	free(giniral.tableau);
 	giniral.g = read_map_on_split(path);
 	giniral.tck = cont(giniral.g.map);
 	giniral.player = player_pos(giniral.g.map);
 	map_tck_c_e_p(giniral.tck.cont_c, giniral.tck.cont_e, giniral.tck.cont_p);
 	map_tck_wall(giniral.g.map, giniral.g.y, giniral.g.x);
 	map_tck_rectangular(giniral.g.map, giniral.g.x);
-	check_path_c(tableau_2d, giniral);
-	tableau = read_map_1(path);
-	tableau_2d_1 = ft_split(tableau, '\n');
-	free(tableau);
-	check_path_e(tableau_2d_1, giniral);
+	check_path_c(giniral.tableau_2d, giniral);
+	giniral.tableau = read_map_1(path);
+	giniral.tableau_2d_1 = ft_split(giniral.tableau, '\n');
+	free(giniral.tableau);
+	check_path_e(giniral.tableau_2d_1, giniral);
 	giniral.g.mlx = mlx_init();
 	giniral.g.mlx_win = mlx_new_window(giniral.g.mlx, 45 * giniral.g.x, 45
 			* giniral.g.y, "so_long");
 	change_map_img(giniral.g.map, &giniral.g);
-	//free_result(giniral.g.map);
 	mlx_hook(giniral.g.mlx_win, 2, 0, key_hook, &giniral.g);
 	mlx_hook(giniral.g.mlx_win, 17, 0, ft_exit, &giniral.g);
 	mlx_loop(giniral.g.mlx);
-
 }
-int	main(int argc, char **argv)
+
+int	main(int argc, char *argv[])
 {
-	t_data_geniral	giniral;
 	if (argc == 2)
-		function_help(giniral,argv[1]);
+		function_help(argv[1]);
 	else if (argc > 2)
-		write(2,"Error\nEnter (./so_long) and (filename.ber)",43);
+		write(2, "Error\nEnter (./so_long) and (filename.ber)", 43);
 	else
-		write(2,"Error\nplese enter paht of map\n",31);
-
-	system("leaks so_long\n");
-
+		write(2, "Error\nplese enter paht of map\n", 31);
 }

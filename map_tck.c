@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 03:55:58 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 17:13:38 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/08 00:53:33 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	map_tck_rectangular(char **str, int len)
 	i = 0;
 	while (str[i])
 	{
-		if (ft_strlen(str[i]) != len)
+		if ((int)ft_strlen(str[i]) != len)
 			message_error("Map is not rectangular\n");
 		i++;
 	}

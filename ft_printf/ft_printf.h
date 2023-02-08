@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 03:53:41 by hlakhal-          #+#    #+#             */
-/*   Updated: 2022/11/10 16:53:01 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/08 03:06:06 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ft_printf_H
-# define FT_ft_printf_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
