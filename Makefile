@@ -6,7 +6,7 @@
 #    By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 03:01:17 by hlakhal-          #+#    #+#              #
-#    Updated: 2023/02/11 21:37:59 by hlakhal-         ###   ########.fr        #
+#    Updated: 2023/02/11 22:56:39 by hlakhal-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ COLOUR_GREEN=\033[0;32m
 
 NAME = so_long
 
-SRCS = grafique.c  map_tck.c  pate_e.c main.c dispaly_image.c   player_pos.c\
-	move_up.c parte.c teck.c get_next_line/get_next_line.c  get_next_line/get_next_line_utils.c\
+SRCS = grafique.c  check_map.c  path_e.c main.c dispaly_image.c   player_pos.c\
+	move.c path_c.c number.c get_next_line/get_next_line.c  get_next_line/get_next_line_utils.c\
 	read_map.c
 
 CC		= cc
