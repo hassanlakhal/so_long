@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 23:17:13 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/11 23:15:22 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/11 23:20:50 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ t_data	read_map_on_split(char *path)
 	char	*a;
 	char	*str;
 
-	i = 0;
 	str = NULL;
 	k.fd = open(path, O_RDWR);
 	path_file(k.fd, path);
