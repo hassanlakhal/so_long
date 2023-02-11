@@ -6,7 +6,7 @@
 #    By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 03:01:17 by hlakhal-          #+#    #+#              #
-#    Updated: 2023/02/08 03:54:24 by hlakhal-         ###   ########.fr        #
+#    Updated: 2023/02/11 21:37:59 by hlakhal-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ so_long:$(OBJ)
 		@make -sC libft/
 		@make -sC ft_printf/
 		@$(CC) $(CFLAGS) $(OBJ) -lmlx -framework OpenGL -framework AppKit libft/libft.a ft_printf/libftprintf.a -o so_long
-		@echo "$(COLOUR_GREEN)done 👊"
+		@echo "$(COLOUR_GREEN)done ✔"
 
 clean:
 		@make -sC libft/ clean

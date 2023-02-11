@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:32:48 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 18:29:45 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:45:32 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	display_wall(int i, int j, t_data *g)
 			&g->height);
 	if (!g->mlx_img)
 	{
-		write(2, "Error\nerror in path of image", 29);
+		write(2, "Error\nerror in path of image ⛔", 33);
 		exit(0);
 	}
 	mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45, i * 45);
@@ -30,7 +30,7 @@ void	display_gras(int i, int j, t_data *g)
 			&g->height);
 	if (!g->mlx_img)
 	{
-		write(2, "Error\nerror in path of image", 29);
+		write(2, "Error\nerror in path of image ⛔", 33);
 		exit(0);
 	}
 	mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45, i * 45);
@@ -43,7 +43,7 @@ void	display_player(int i, int j, t_data *g)
 			&g->height);
 	if (!g->mlx_img)
 	{
-		write(2, "Error\nerror in path of image", 29);
+		write(2, "Error\nerror in path of image ⛔", 33);
 		exit(0);
 	}
 	mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45, i * 45);
@@ -56,7 +56,7 @@ void	display_exit(int i, int j, t_data *g)
 			&g->height);
 	if (!g->mlx_img)
 	{
-		write(2, "Error\nerror in path of image", 29);
+		write(2, "Error\nerror in path of image ⛔", 33);
 		exit(0);
 	}
 	mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45, i * 45);
@@ -69,7 +69,7 @@ void	display_colection(int i, int j, t_data *g)
 			&g->height);
 	if (!g->mlx_img)
 	{
-		write(2, "Error\nerror in path of image", 29);
+		write(2, "Error\nerror in path of image ⛔", 33);
 		exit(0);
 	}
 	mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45, i * 45);
