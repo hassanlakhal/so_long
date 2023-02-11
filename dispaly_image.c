@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:32:48 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/11 21:45:32 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/11 23:14:18 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	display_exit(int i, int j, t_data *g)
 void	display_colection(int i, int j, t_data *g)
 {
 	display_gras(i, j, g);
-	g->mlx_img = mlx_xpm_file_to_image(g->mlx, "textures/colection.xpm", &g->whidt,
-			&g->height);
+	g->mlx_img = mlx_xpm_file_to_image(g->mlx, "textures/colection.xpm",
+			&g->whidt, &g->height);
 	if (!g->mlx_img)
 	{
 		write(2, "Error\nerror in path of image ⛔", 33);

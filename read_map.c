@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 23:17:13 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 21:35:46 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/11 23:15:22 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	path_file(int a, char *path)
 			if (ft_memcmp(path + i, ".ber", ft_strlen(path + i)))
 			{
 				write(1, "Error\n", 7);
-				ft_putendl_fd("file not exit",2);
+				ft_putendl_fd("file not exit", 2);
 				exit(0);
 			}
 		}
@@ -33,7 +33,7 @@ void	path_file(int a, char *path)
 	if (a <= 0 || !ft_strnstr(path, ".ber", ft_strlen(path)))
 	{
 		write(2, "Error\n", 7);
-		ft_putendl_fd("file not exit",2);
+		ft_putendl_fd("file not exit", 2);
 		exit(0);
 	}
 }
@@ -49,12 +49,13 @@ t_data	read_map_on_split(char *path)
 	str = NULL;
 	k.fd = open(path, O_RDWR);
 	path_file(k.fd, path);
-	while ((a = get_next_line(k.fd)))
+	a = get_next_line(k.fd);
+	while (a != NULL)
 	{
 		str = ft_strjoin(str, a);
+		a = get_next_line(k.fd);
 		free(a);
 	}
-	//free(a);
 	map_tck_new_line(str);
 	k.map = ft_split(str, '\n');
 	k.tableau_2d = (char **)ft_split(str, '\n');

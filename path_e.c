@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pate_e.c                                           :+:      :+:    :+:   */
+/*   path_e.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 22:38:00 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/07 16:51:59 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/11 23:15:07 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	check(char **str, t_data_geniral giniral, int i, int j)
 
 void	check_path_e(char **tab, t_data_geniral giniral)
 {
-	int		k;
+	int	k;
 
 	k = 0;
 	check(tab, giniral, giniral.player.y, giniral.player.x);
@@ -39,7 +39,7 @@ void	check_path_e(char **tab, t_data_geniral giniral)
 	{
 		if (ft_strchr(tab[k], 'E'))
 		{
-			write(2,"Error\ntrik ma9to3a",19);
+			write(2, "Error\ntrik ma9to3a", 19);
 			free((void *)tab[k]);
 			exit(0);
 		}

@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:14:12 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/08 22:35:32 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/11 23:14:33 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	ft_exit(t_data g)
 void	function_help(char *path)
 {
 	t_data_geniral	giniral;
+
 	giniral.tableau = read_map_1(path);
 	giniral.tableau_2d = ft_split(giniral.tableau, '\n');
 	free(giniral.tableau);
