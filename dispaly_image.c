@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 21:32:48 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/16 02:31:09 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/22 03:42:13 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ void	display_exit(int i, int j, t_data *g)
 	mlx_put_image_to_window(g->mlx, g->mlx_win, g->mlx_img, j * 45, i * 45);
 }
 
-void	display_colection(int i, int j, t_data *g)
+void	display_collectible(int i, int j, t_data *g)
 {
 	display_gras(i, j, g);
-	g->mlx_img = mlx_xpm_file_to_image(g->mlx, "textures/colection.xpm",
+	g->mlx_img = mlx_xpm_file_to_image(g->mlx, "textures/collectible.xpm",
 			&g->whidt, &g->height);
 	if (!g->mlx_img)
 	{

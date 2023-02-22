@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 00:02:47 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/11 23:13:41 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/22 03:42:13 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_image(char c, int i, int j, t_data *g)
 	if (c == 'E')
 		display_exit(i, j, g);
 	if (c == 'C')
-		display_colection(i, j, g);
+		display_collectible(i, j, g);
 }
 
 void	change_map_img(char **k, t_data *g)

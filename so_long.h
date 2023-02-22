@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 21:55:07 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/08 03:07:20 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/22 03:42:13 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void		display_wall(int i, int j, t_data *g);
 void		display_gras(int i, int j, t_data *g);
 void		display_player(int i, int j, t_data *g);
 void		display_exit(int i, int j, t_data *g);
-void		display_colection(int i, int j, t_data *g);
+void		display_collectible(int i, int j, t_data *g);
 char		*read_map_1(char *path_1);
 void		path_file(int a, char *path);
 

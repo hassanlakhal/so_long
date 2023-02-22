@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:14:12 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/11 23:14:33 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/02/22 03:38:10 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	key_hook(int keycode, t_data *vars)
 	static int	move;
 	t_data		d;
 	int			a;
-
 	a = 0;
 	d = cont(vars->map);
 	if (keycode == 53)
@@ -28,13 +27,13 @@ int	key_hook(int keycode, t_data *vars)
 	}
 	if (!d.cont_c)
 		a++;
-	if (keycode == 126)
+	if (keycode == 126 || keycode == 13)
 		move_up(vars, a, &move);
-	if (keycode == 125)
+	if (keycode == 125 || keycode == 1)
 		move_down(vars, a, &move);
-	if (keycode == 124)
+	if (keycode == 124 || keycode == 2)
 		move_right(vars, a, &move);
-	if (keycode == 123)
+	if (keycode == 123 || keycode == 0)
 		move_left(vars, a, &move);
 	return (c);
 }
