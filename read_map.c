@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 23:17:13 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/02/15 21:10:46 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/03/01 00:35:54 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ t_data	read_map_on_split(char *path)
 	while (a != NULL)
 	{
 		str = ft_strjoin(str, a);
-		a = get_next_line(k.fd);
 		free(a);
+		a = get_next_line(k.fd);
 	}
 	map_tck_new_line(str);
 	k.map = ft_split(str, '\n');
